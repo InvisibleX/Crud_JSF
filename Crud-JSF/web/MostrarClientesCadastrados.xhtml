@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Mostrar Clientes</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:messages />
+            <h:form>
+<!--#####################################################################################################################################-->                
+                <h:dataTable value="#{cliente_Controler.todos}" var="item"
+                             border="1">
+                    <f:facet name="header">
+                        <h:outputText value="Mostrar Clientes"/>
+                    </f:facet>
+<!--#########################################################################-->
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Código"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigo}"/>
+                    </h:column>
+<!--#########################################################################-->                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nome"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nome}"/>
+                    </h:column>
+<!--#########################################################################-->                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nascimento"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nascimento}"/>
+                    </h:column>
+<!--#########################################################################-->
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Endereço"/>
+                        </f:facet>
+                        <h:outputText value="#{item.endereco}"/>
+                    </h:column>
+<!--#########################################################################-->
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="cidade"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cidade}"/>
+                    </h:column>
+<!--#########################################################################-->                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Status"/>
+                        </f:facet>
+                        <h:outputText value="#{item.status}"/>
+                    </h:column>
+<!--#########################################################################-->
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Alterar"/>
+                        </f:facet>
+                        <h:commandLink action="/index.xhtml" value="Alterar"/>
+                    </h:column>
+<!--#########################################################################-->
+                         <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Excluir"/>
+                        </f:facet>
+                             <h:commandLink action="/index.xhtml" value="Excluir"/> 
+                    </h:column>
+<!--#########################################################################-->
+                </h:dataTable>
+<!--#####################################################################################################################################-->
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
